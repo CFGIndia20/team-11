@@ -12,48 +12,75 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="632dp"
-        android:layout_marginTop="30dp"
         android:background="@drawable/et_style"
         android:padding="10dp"
-        android:textColor="#000000"
         android:text="@string/how_was_your_child_s_treated"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageButton
+        android:id="@+id/b1"
+        android:layout_width="46dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="640dp"
+        android:background="@drawable/ic_speaker"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.hsalf.smilerating.SmileRating
         android:id="@+id/ratingView1"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
         app:isIndicator="false"
-        app:layout_constraintTop_toBottomOf="@+id/txt1"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt1" />
 
     <TextView
         android:id="@+id/txt2"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:background="@drawable/et_style"
         android:padding="10dp"
-        android:layout_marginTop="30dp"
         android:text="@string/how_was_the_food"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingView1" />
+
+    <ImageButton
+        android:id="@+id/b2"
+        android:layout_width="46dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/ic_speaker"
+
+        app:layout_constraintEnd_toEndOf="@+id/b1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/b1"
         app:layout_constraintTop_toBottomOf="@+id/ratingView1" />
 
     <com.hsalf.smilerating.SmileRating
         android:id="@+id/ratingView2"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
         app:isIndicator="false"
-        app:layout_constraintTop_toBottomOf="@+id/txt2"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt2" />
 
     <TextView
         android:id="@+id/txt3"
@@ -61,22 +88,34 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/et_style"
+        android:padding="10dp"
         android:text="@string/was_the_facility_clean"
         android:textAlignment="center"
-        android:padding="10dp"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingView2" />
 
+    <ImageButton
+        android:id="@+id/b3"
+        android:layout_width="46dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="212dp"
+        android:background="@drawable/ic_speaker"
+        app:layout_constraintStart_toStartOf="@+id/txt3"
+        app:layout_constraintTop_toBottomOf="@+id/ratingView1" />
+
     <com.hsalf.smilerating.SmileRating
         android:id="@+id/ratingView3"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
         app:isIndicator="false"
-        app:layout_constraintTop_toBottomOf="@+id/txt3"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt3" />
 
     <Button
         android:id="@+id/submitButton"
