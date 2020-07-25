@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const FeedbackSchema = new mongoose.Schema({
     phoneNo: {
         type: Number,
-        required: true,
+        required: false,
     },
     answer1: {
         type: Number,

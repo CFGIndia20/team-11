@@ -21,11 +21,11 @@ router.post(
             return res.status(400).json({ errors: errors.array() });
         }
 
-        const { centreCode, location } = req.body;
-        console.log(centreCode + location);
+        const { location } = req.body;
+        console.log(location);
 
         try {
-            const newCentre = Centre(centreCode, location);
+            const newCentre = Centre(location);
 
             await newCentre.save();
 
