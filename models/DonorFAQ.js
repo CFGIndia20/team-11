@@ -9,4 +9,4 @@ const DonorFAQSchema = new mongoose.Schema({
     },
 });
 
-module.exports = DonorFAQ = mongoose.model('donorFAQ', DonorFAQSchema);
+module.exports = DonorFAQ = mongoose.model('donorfaq', DonorFAQSchema);
