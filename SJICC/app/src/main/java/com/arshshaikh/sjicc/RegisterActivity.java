@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +36,11 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton = findViewById(R.id.registerButton);
         alreadyRegistered = findViewById(R.id.alreadyRegistered);
         showPassword = findViewById(R.id.showPassword);
+
+        Spinner dropdown = findViewById(R.id.spinner1);
+        String[] items = new String[]{"NGO", "Donor"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
 
         alreadyRegistered.setOnClickListener(new View.OnClickListener() {
             @Override
