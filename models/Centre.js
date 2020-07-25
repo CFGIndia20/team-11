@@ -10,5 +10,6 @@ const CentreSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    centreManager
 });
 module.exports = Centre = mongoose.model('centre', CentreSchema);
