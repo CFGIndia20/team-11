@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { check, validationResult } = require('express-validator');
 const DonorFAQ = require('../../models/DonorFAQ');
 const User = require('../../models/User');
+const Center = require('../../models/Center');
 
 // @route    GET api/donorfaq
 // @desc     Get Donor FAQ,
@@ -23,10 +24,11 @@ router.post(
 
             switch (q) {
                 case 1:
-                    return res.status(200).json({ ans: 1 });
+                    const center = Center.findOne({ centerCode: user['centerCode']});
+                    return res.status(200).json({ ans: center['capacity'] });
 
                 case 2:
-                    return res.status(200).json({ ans: 1 });
+                    return res.status(200).json({ ans: "John Wick" });
 
                 case 3:
                     return res.status(200).json({ ans: 1 });
