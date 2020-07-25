@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const CentreSchema = new mongoose.Schema({
-    centrecode: {
+    centreCode: {
         type: Number,
         require: true,
         unique: true,
