@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
-const DonorFAQSchema = new mongoose.Schema({ 
+const DonorFAQSchema = new mongoose.Schema({
     question: {
-        type: String
+        type: String,
     },
     answer: {
-        type: String
-    }
+        type: String,
+    },
 });
 
-module.exports = DonorFAQ = mongoose.model('DonorFAQ', DonorFAQSchema);
+module.exports = DonorFAQ = mongoose.model('donorfaq', DonorFAQSchema);
