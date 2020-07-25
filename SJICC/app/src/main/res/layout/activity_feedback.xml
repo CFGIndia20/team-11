@@ -25,7 +25,7 @@
 
     <com.hsalf.smilerating.SmileRating
         android:id="@+id/ratingView1"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -49,7 +49,7 @@
         android:id="@+id/ratingView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_centerVertical="true"
         app:isIndicator="false"
         app:layout_constraintTop_toBottomOf="@+id/txt2"/>
@@ -72,7 +72,7 @@
         android:id="@+id/ratingView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_centerVertical="true"
         app:isIndicator="false"
         app:layout_constraintTop_toBottomOf="@+id/txt3"/>
