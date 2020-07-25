@@ -32,6 +32,10 @@ const UserSchema = new mongoose.Schema({
         enum: ['NGO', 'CMS', 'DONOR'],
         default: 'CMS',
     },
+    date: {
+        type: Date,
+        default: Date.now,
+    },
 });
 
 module.exports = User = mongoose.model('User', UserSchema);
