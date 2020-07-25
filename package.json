@@ -1,0 +1,19 @@
+{
+  "name": "team-11",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CFGIndia20/team-11.git"
+  },
+  "author": "Arsh Shaikh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CFGIndia20/team-11/issues"
+  },
+  "homepage": "https://github.com/CFGIndia20/team-11#readme"
+}
