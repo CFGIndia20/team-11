@@ -2,14 +2,13 @@ const mongoose = require('mongoose');
 
 const CentreSchema = new mongoose.Schema({
     centreCode: {
-        type: Number,
-        require: true,
+        type: String,
+        required: false,
         unique: true,
     },
     location: {
         type: String,
-        require: true,
+        required: true,
     },
-    centreManager
 });
 module.exports = Centre = mongoose.model('centre', CentreSchema);

@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const FeedbackSchema = new mongoose.Schema({
+    phoneNo: {
+        type: Number,
+        required: true,
+    },
     answer1: {
         type: Number,
         required: true,

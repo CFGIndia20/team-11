@@ -35,8 +35,8 @@ const PatientSchema = new mongoose.Schema({
         required: true,
     },
     centre: {
-        centreId: Number,
-        require: true,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'centre',
     },
 });
 
