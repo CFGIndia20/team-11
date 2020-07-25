@@ -1,6 +1,7 @@
 package com.arshshaikh.sjicc;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.widget.TextView;
 import java.util.List;
@@ -21,6 +22,7 @@ public class Testing extends AppCompatActivity {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.2.105:3000/")
+                //.baseUrl("https://jsonplaceholder.typicode.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -49,6 +51,7 @@ public class Testing extends AppCompatActivity {
                     textViewResult.append(content);
                 }
             }
+
             @Override
             public void onFailure(Call<List<Post>> call, Throwable t) {
                 textViewResult.setText(t.getMessage());
@@ -56,8 +59,8 @@ public class Testing extends AppCompatActivity {
         });*/
 
         //Get Request
-        Call<FeedbackGet> feedbacks = jsonPlaceHolderApi.getfeedbacks();
-        feedbacks.enqueue(new Callback<FeedbackGet>() {
+        Call<FeedbackGet> feebacks = jsonPlaceHolderApi.getfeedbacks();
+        feebacks.enqueue(new Callback<FeedbackGet>() {
             @Override
             public void onResponse(Call<FeedbackGet> call, Response<FeedbackGet> response) {
                 if(!response.isSuccessful()){
@@ -80,7 +83,7 @@ public class Testing extends AppCompatActivity {
     }
 
     //create post method for post api
-   /* private void createPost(){
+    private void createPost(){
         Post post = new Post(23,"New Title", "New Text");
         Call<Post> call = jsonPlaceHolderApi.createPost(post);
         call.enqueue(new Callback<Post>() {
@@ -105,5 +108,5 @@ public class Testing extends AppCompatActivity {
 
             }
         });
-    }*/
+    }
 }
