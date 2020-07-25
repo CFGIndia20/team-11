@@ -22,7 +22,8 @@ public class RegisterActivity extends AppCompatActivity {
     Button registerButton;
     TextView alreadyRegistered;
     CheckBox showPassword;
-
+    String useremail="";
+    String userpass="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +67,9 @@ public class RegisterActivity extends AppCompatActivity {
                 } else if (!pwd.equals(pwd2)) {
                     Toast.makeText(RegisterActivity.this, "Passwords do not match!", Toast.LENGTH_SHORT).show();
                 } else if (!(mail.isEmpty()) && !(pwd.isEmpty())) {
+                    Register register = new Register();
+                    //useremail = register.getEmail();
+                    //userpass = register.getPwd();
                     Intent goToLogin = new Intent(RegisterActivity.this,MainActivity.class);
                     startActivity(goToLogin);
                 }
