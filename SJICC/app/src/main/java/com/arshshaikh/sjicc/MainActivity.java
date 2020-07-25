@@ -12,8 +12,6 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -47,22 +45,26 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String mail = email.getText().toString().trim();
                 String pwd = pass1.getText().toString().trim();
+                //Checking if the mail is fileld
                 if(mail.isEmpty()){
                     email.setError("Please enter an Email");
                     email.requestFocus();
                 }
+                //Checking if the password is filled
                 else if(pwd.isEmpty())
                 {
                     pass1.setError("Please enter a password");
                     pass1.requestFocus();
                 }
+                //GoToDashBaoard
                 else if(!(mail.isEmpty()) && !(pwd.isEmpty())){
-                    Intent goToAllTabs = new Intent(MainActivity.this, DashboardActivity.class);
-                    startActivity(goToAllTabs);
+                    Intent goToDashboard = new Intent(MainActivity.this, DashboardActivity.class);
+                    startActivity(goToDashboard);
                 }
             }
         });
 
+        //Hide or Show Password
         showPassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
