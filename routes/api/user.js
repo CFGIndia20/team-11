@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const { check, validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const User = require('../../models/User');
+require('dotenv').config();
 
 // @route    GET api/user
 // @desc     Test api
@@ -29,6 +32,8 @@ router.post(
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
+
+        const { name, email, phone, password, roleStatus } = req.body;
 
         try {
             // See if user exists
@@ -65,7 +70,7 @@ router.post(
 
             jwt.sign(
                 payload,
-                config.get('jwtSecret'),
+                process.env.JWTSECRET,
                 {
                     expiresIn: 360000,
                 },
