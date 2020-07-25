@@ -1,7 +1,6 @@
 package com.arshshaikh.sjicc;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.TextView;
 import java.util.List;
@@ -21,14 +20,14 @@ public class Testing extends AppCompatActivity {
         textViewResult = findViewById(R.id.textViewResult);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com/")
+                .baseUrl("http://192.168.2.105:3000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 
         //post request
-        createPost();
+        //createPost();
 
         /*
         //Get Request
@@ -50,16 +49,38 @@ public class Testing extends AppCompatActivity {
                     textViewResult.append(content);
                 }
             }
-
             @Override
             public void onFailure(Call<List<Post>> call, Throwable t) {
                 textViewResult.setText(t.getMessage());
             }
         });*/
+
+        //Get Request
+        Call<FeedbackGet> feedbacks = jsonPlaceHolderApi.getfeedbacks();
+        feedbacks.enqueue(new Callback<FeedbackGet>() {
+            @Override
+            public void onResponse(Call<FeedbackGet> call, Response<FeedbackGet> response) {
+                if(!response.isSuccessful()){
+                    textViewResult.setText("Code" + response.code());
+                    return;
+                }
+                FeedbackGet feedbackGets = response.body();
+                String content = "";
+                content += "Number 1" + feedbackGets.getNumber1() + "\n";
+                content += "Number 2" + feedbackGets.getNumber2() + "\n";
+                content += "Number 3" + feedbackGets.getNumber3() + "\n";
+                textViewResult.append(content);
+            }
+
+            @Override
+            public void onFailure(Call<FeedbackGet> call, Throwable t) {
+                textViewResult.setText(t.getMessage());
+            }
+        });
     }
 
     //create post method for post api
-    private void createPost(){
+   /* private void createPost(){
         Post post = new Post(23,"New Title", "New Text");
         Call<Post> call = jsonPlaceHolderApi.createPost(post);
         call.enqueue(new Callback<Post>() {
@@ -84,5 +105,5 @@ public class Testing extends AppCompatActivity {
 
             }
         });
-    }
+    }*/
 }
