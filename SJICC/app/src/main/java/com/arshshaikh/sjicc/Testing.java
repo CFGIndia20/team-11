@@ -68,13 +68,11 @@ public class Testing extends AppCompatActivity {
                     return;
                 }
                 FeedbackGet feedbackGets = response.body();
-
-                    String content = "";
-                    content += "Number 1" + feedbackGets.getNumber1() + "\n";
-                    content += "Number 2" + feedbackGets.getNumber2() + "\n";
-                    content += "Number 3" + feedbackGets.getNumber3() + "\n";
-                    textViewResult.append(content);
-
+                String content = "";
+                content += "Number 1" + feedbackGets.getNumber1() + "\n";
+                content += "Number 2" + feedbackGets.getNumber2() + "\n";
+                content += "Number 3" + feedbackGets.getNumber3() + "\n";
+                textViewResult.append(content);
             }
 
             @Override

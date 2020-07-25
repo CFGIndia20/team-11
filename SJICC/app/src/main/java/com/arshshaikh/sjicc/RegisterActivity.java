@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
                 } else if (!pwd.equals(pwd2)) {
                     Toast.makeText(RegisterActivity.this, "Passwords do not match!", Toast.LENGTH_SHORT).show();
                 } else if (!(mail.isEmpty()) && !(pwd.isEmpty())) {
-                    Register register = new Register();
+                    // Register register = new Register();
                     //useremail = register.getEmail();
                     //userpass = register.getPwd();
                     Intent goToLogin = new Intent(RegisterActivity.this,MainActivity.class);

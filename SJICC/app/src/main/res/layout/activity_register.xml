@@ -23,18 +23,15 @@
         android:id="@+id/email"
         android:layout_width="267dp"
         android:layout_height="55dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="344dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/et_style"
         android:hint="Email Address"
         android:padding="10dp"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/pass1"
@@ -69,15 +66,16 @@
         app:layout_constraintTop_toBottomOf="@+id/pass1" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="115dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="72dp"
+        android:id="@+id/imageView"
+        android:layout_width="132dp"
+        android:layout_height="109dp"
+        android:layout_marginTop="80dp"
         android:background="#00000000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_st_jude_logo" />
+        tools:srcCompat="@drawable/logo" />
 
     <Button
         android:id="@+id/registerButton"
