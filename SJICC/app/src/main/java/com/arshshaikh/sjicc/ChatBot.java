@@ -21,7 +21,7 @@ public class ChatBot extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_bot);
-        userInput = findViewById(R.id.userInput);
+     /*   userInput = findViewById(R.id.userInput);
         recyclerView = findViewById(R.id.conversation);
         responseMessageList = new ArrayList<>();
         messageAdapter = new Adapter(responseMessageList, this);
@@ -49,5 +49,6 @@ public class ChatBot extends AppCompatActivity {
         int pos = layoutManager.findLastCompletelyVisibleItemPosition();
         int numItems = recyclerView.getAdapter().getItemCount();
         return (pos >= numItems);
+    }*/
     }
 }
