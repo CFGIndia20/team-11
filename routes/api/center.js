@@ -3,7 +3,7 @@ const { check, validationResult } = require('express-validator');
 const Center = require('../../models/Center');
 
 // @route    GET api/center
-// @desc     Get Center Avg. from DB
+// @desc     Get center data
 // @access   Public
 router.post(
     '/',

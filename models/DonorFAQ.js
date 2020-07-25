@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const DonorFAQSchema = new mongoose.Schema({
-    question: {
-        type: String,
+    questionNo: {
+        type: Number,
         required: true,
     },
     answer: {

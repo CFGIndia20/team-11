@@ -32,6 +32,9 @@ const UserSchema = new mongoose.Schema({
         enum: ['NGO', 'CMS', 'DONOR'],
         default: 'CMS',
     },
+    centerCode: {
+        type: Number,
+    },
     date: {
         type: Date,
         default: Date.now,
