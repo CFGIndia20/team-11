@@ -37,7 +37,11 @@ const PatientSchema = new mongoose.Schema({
         admission: {
             type: String,
             required: true
+        },
+        centre:{
+            centreId:Number,
+            require:true
         }
 });
 
-module.exports = Patient = mongoose.model('User', PatientSchema);
+module.exports = Patient = mongoose.model('Patient', PatientSchema);
