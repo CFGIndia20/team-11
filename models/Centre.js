@@ -11,4 +11,4 @@ const CentreSchema = new mongoose.Schema({
         require: true,
     },
 });
-module.exports = Centre = mongoose.model('Centre', CentreSchema);
+module.exports = Centre = mongoose.model('centre', CentreSchema);
