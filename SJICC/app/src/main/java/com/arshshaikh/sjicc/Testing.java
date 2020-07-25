@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Testing extends AppCompatActivity {
     private TextView textViewResult;
-
+    JsonPlaceHolderApi jsonPlaceHolderApi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +25,13 @@ public class Testing extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+        jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 
+        //post request
+        createPost();
+
+        /*
+        //Get Request
         Call<List<Post>> call = jsonPlaceHolderApi.getPosts();
         call.enqueue(new Callback<List<Post>>() {
             @Override
@@ -49,6 +54,34 @@ public class Testing extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Post>> call, Throwable t) {
                 textViewResult.setText(t.getMessage());
+            }
+        });*/
+    }
+
+    //create post method for post api
+    private void createPost(){
+        Post post = new Post(23,"New Title", "New Text");
+        Call<Post> call = jsonPlaceHolderApi.createPost(post);
+        call.enqueue(new Callback<Post>() {
+            @Override
+            public void onResponse(Call<Post> call, Response<Post> response) {
+                if(!response.isSuccessful()){
+                    textViewResult.setText("Code:" + response.code());
+                    return;
+                }
+
+                Post postresponse = response.body();
+                String content = "";
+                content += "Code" + response.code() + "\n";
+                content += "ID" + postresponse.getId() + "\n";
+                content += "User ID" + postresponse.getUserId() + "\n";
+                content += "Title" + postresponse.getTitle() + "\n";
+                content += "Text" + postresponse.getText() + "\n";
+                textViewResult.append(content);
+            }
+            @Override
+            public void onFailure(Call<Post> call, Throwable t) {
+
             }
         });
     }
