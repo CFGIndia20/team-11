@@ -1,26 +1,30 @@
 {
-  "name": "team-11",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CFGIndia20/team-11.git"
-  },
-  "author": "Arsh Shaikh",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/CFGIndia20/team-11/issues"
-  },
-  "homepage": "https://github.com/CFGIndia20/team-11#readme",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "config": "^3.3.1",
-    "express": "^4.17.1",
-    "express-validator": "^6.6.0",
-    "mongoose": "^5.9.25"
-  }
+    "name": "team-11",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server",
+        "server": "nodemon server"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CFGIndia20/team-11.git"
+    },
+    "author": "Arsh Shaikh",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/CFGIndia20/team-11/issues"
+    },
+    "homepage": "https://github.com/CFGIndia20/team-11#readme",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "config": "^3.3.1",
+        "express": "^4.17.1",
+        "express-validator": "^6.6.0",
+        "mongoose": "^5.9.25"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.4"
+    }
 }
