@@ -24,6 +24,20 @@ const PatientSchema = new mongoose.Schema({
             type: String,
             required: true
         },
+        familyMember: {
+            type: Array,
+            required: true 
+        },
+        entryDate: {
+            type: Date
+        },
+        exitDate: {
+            type: Date
+        },
+        admission: {
+            type: String,
+            required: true
+        }
 });
 
 module.exports = Patient = mongoose.model('User', PatientSchema);
