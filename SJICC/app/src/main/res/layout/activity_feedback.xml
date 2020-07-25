@@ -23,6 +23,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <com.hsalf.smilerating.SmileRating
         android:id="@+id/ratingView1"
         android:layout_marginTop="20dp"
