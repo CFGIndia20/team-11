@@ -3,6 +3,7 @@ package com.arshshaikh.sjicc;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 import com.hsalf.smilerating.BaseRating;
 import com.hsalf.smilerating.SmileRating;
 
+import java.util.Locale;
+
 public class FeedbackActivity extends AppCompatActivity implements SmileRating.OnSmileySelectionListener, SmileRating.OnRatingSelectedListener {
 
     private static final String TAG = "FeedbackActivity";
@@ -19,6 +22,12 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
     TextView txt2;
     TextView txt3;
     Button submitButton;
+    TextToSpeech t1;
+    Button b1;
+    TextToSpeech t2;
+    Button b2;
+    TextToSpeech t3;
+    Button b3;
 
     private SmileRating mSmileRating1;
     private SmileRating mSmileRating2;
@@ -46,6 +55,60 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
         mSmileRating3.setOnSmileySelectionListener(this);
         mSmileRating3.setOnRatingSelectedListener(this);
 
+        t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    t1.setLanguage(Locale.UK);
+                }
+            }
+        });
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String toSpeak = txt1.getText().toString();
+                Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
+                t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+
+        t2=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    t2.setLanguage(Locale.UK);
+                }
+            }
+        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String toSpeak = txt2.getText().toString();
+                Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
+                t2.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+
+        t3=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    t3.setLanguage(Locale.UK);
+                }
+            }
+        });
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String toSpeak = txt3.getText().toString();
+                Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
+                t3.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+
         submitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 int r1 = mSmileRating1.getRating();
@@ -56,8 +119,14 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
                 toast.show();
             }
         });
+    }
 
-
+    public void onPause(){
+        if(t1 !=null){
+            t1.stop();
+            t1.shutdown();
+        }
+        super.onPause();
     }
 
 

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">सेंट जूड इंडिया चाइल्ड केयर</string>
+<string name="how_was_your_child_s_treated">आपके बच्चे का इलाज कैसे किया गया?</string>
+<string name="how_was_the_food">भोजन की सुविधा कैसे थी?</string>
+<string name="was_the_facility_clean">क्या केंद्र साफ था?</string>
+<string name="submit">फार्म जमा करें</string>
+</resources>
