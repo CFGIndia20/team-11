@@ -12,6 +12,11 @@
 const mongoose = require('mongoose');
 
 const PatientSchema = new mongoose.Schema({
+    uid: {
+        type: Number,
+        required: true,
+        unique: true,
+    },
     name: {
         type: String,
         required: true,
@@ -34,9 +39,9 @@ const PatientSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    centre: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'centre',
+    center: {
+        type: Number,
+        required: true,
     },
 });
 
