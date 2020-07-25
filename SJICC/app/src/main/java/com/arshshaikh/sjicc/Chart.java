@@ -48,6 +48,9 @@ public class Chart extends AppCompatActivity {
                 content += "Number " + feedbackGets.getNumber2() + "\n";
                 content += "Number " + feedbackGets.getNumber3() + "\n";
                 Log.i("Content", content);
+                num1 = feedbackGets.getNumber1();
+                num2 = feedbackGets.getNumber2();
+                num3 = feedbackGets.getNumber3();
                 //textViewResult.append(content);
             }
 
