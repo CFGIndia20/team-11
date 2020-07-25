@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         alreadyRegistered.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent RegisterIntent = new Intent(RegisterActivity.this, MainActivity.class);
+                Intent RegisterIntent = new Intent(RegisterActivity.this, Chart.class);
                 startActivity(RegisterIntent);
             }
         });
