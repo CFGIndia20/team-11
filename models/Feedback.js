@@ -1,11 +1,15 @@
 const mongoose = require('mongoose');
 
 const FeedbackSchema = new mongoose.Schema({
-    q1: {
-        type: String,
+    answer1: {
+        type: Number,
         required: true,
     },
-    q2: {
+    answer2: {
+        type: Number,
+        required: true,
+    },
+    answer3: {
         type: Number,
         required: true,
     },
