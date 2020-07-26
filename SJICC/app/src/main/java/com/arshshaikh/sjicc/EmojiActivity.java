@@ -15,7 +15,7 @@ import com.hsalf.smilerating.SmileRating;
 
 import java.util.Locale;
 
-public class FeedbackActivity extends AppCompatActivity implements SmileRating.OnSmileySelectionListener, SmileRating.OnRatingSelectedListener {
+public class EmojiActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final String TAG = "FeedbackActivity";
     TextView txt1;
@@ -28,11 +28,12 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
     ImageButton b2;
     TextToSpeech t3;
     ImageButton b3;
-    int r1=3, r2=3, r3=3;
 
-    SmileRating mSmileRating1;
-    SmileRating mSmileRating2;
-    SmileRating mSmileRating3;
+    ImageButton e1, e2, e3, e4, e5;
+    ImageButton e11, e12, e13, e14, e15;
+    ImageButton e21, e22, e23, e24, e25;
+
+    int r1=3, r2=3, r3=3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,20 +46,48 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
         submitButton = findViewById(R.id.submitButton);
         b1 = findViewById(R.id.b1);
         b2 = findViewById(R.id.b2);
-        b2 = findViewById(R.id.b3);
-        mSmileRating1 = findViewById(R.id.ratingView1);
-        mSmileRating2 = findViewById(R.id.ratingView2);
-        mSmileRating3 = findViewById(R.id.ratingView3);
+        b3 = findViewById(R.id.b3);
+        e1 = findViewById(R.id.e1);
+        e2 = findViewById(R.id.e2);
+        e3 = findViewById(R.id.e3);
+        e4 = findViewById(R.id.e4);
+        e5 = findViewById(R.id.e5);
+        e11 = findViewById(R.id.e11);
+        e12 = findViewById(R.id.e12);
+        e13 = findViewById(R.id.e13);
+        e14 = findViewById(R.id.e14);
+        e15 = findViewById(R.id.e15);
+        e21 = findViewById(R.id.e21);
+        e22 = findViewById(R.id.e22);
+        e23 = findViewById(R.id.e23);
+        e24 = findViewById(R.id.e24);
+        e25 = findViewById(R.id.e25);
+
+        e1.setOnClickListener(this);
+        e2.setOnClickListener(this);
+        e3.setOnClickListener(this);
+        e4.setOnClickListener(this);
+        e5.setOnClickListener(this);
+        e11.setOnClickListener(this);
+        e12.setOnClickListener(this);
+        e13.setOnClickListener(this);
+        e14.setOnClickListener(this);
+        e15.setOnClickListener(this);
+        e21.setOnClickListener(this);
+        e22.setOnClickListener(this);
+        e23.setOnClickListener(this);
+        e24.setOnClickListener(this);
+        e25.setOnClickListener(this);
 
 
-        mSmileRating1.setOnSmileySelectionListener(this);
-        mSmileRating1.setOnRatingSelectedListener(this);
-
-        mSmileRating2.setOnSmileySelectionListener(this);
-        mSmileRating2.setOnRatingSelectedListener(this);
-
-        mSmileRating3.setOnSmileySelectionListener(this);
-        mSmileRating3.setOnRatingSelectedListener(this);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String toSpeak = txt1.getText().toString();
+                Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
+                t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
 
         t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -116,44 +145,62 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                r1 = mSmileRating1.getRating();
-                r2 = mSmileRating2.getRating();
-                r3 = mSmileRating3.getRating();
-
-                Toast toast = Toast. makeText(getApplicationContext(), r1 + " " + r2 + " " + r3, Toast. LENGTH_SHORT);
-                toast.show();
+                //Send r1, r2, r3 to API
             }
         });
+
     }
 
     @Override
-    public void onSmileySelected(@BaseRating.Smiley int smiley, boolean reselected) {
-        switch (smiley) {
-            case SmileRating.BAD:
-                Log.i(TAG, "Bad");
+    public void onClick(View v){
+        switch(v.getId()){
+            case R.id.e1:
+                r1=1;
                 break;
-            case SmileRating.GOOD:
-                Log.i(TAG, "Good");
+            case R.id.e2:
+                r1=2;
                 break;
-            case SmileRating.GREAT:
-                Log.i(TAG, "Great");
+            case R.id.e3:
+                r1=3;
                 break;
-            case SmileRating.OKAY:
-                Log.i(TAG, "Okay");
+            case R.id.e4:
+                r1=4;
                 break;
-            case SmileRating.TERRIBLE:
-                Log.i(TAG, "Terrible");
+            case R.id.e5:
+                r1=5;
                 break;
-            case SmileRating.NONE:
-                Log.i(TAG, "None");
+            case R.id.e11:
+                r2=1;
                 break;
+            case R.id.e12:
+                r2=2;
+                break;
+            case R.id.e13:
+                r2=3;
+                break;
+            case R.id.e14:
+                r2=4;
+                break;
+            case R.id.e15:
+                r2=5;
+                break;
+            case R.id.e21:
+                r3=1;
+                break;
+            case R.id.e22:
+                r3=2;
+                break;
+            case R.id.e23:
+                r3=3;
+                break;
+            case R.id.e24:
+                r3=4;
+                break;
+            case R.id.e25:
+                r3=5;
+                break;
+
         }
-    }
 
-
-
-    @Override
-    public void onRatingSelected(int level, boolean reselected) {
-        Log.i(TAG, "Rated as: " + level + " - " + reselected);
     }
 }
