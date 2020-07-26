@@ -12,9 +12,10 @@
 const mongoose = require('mongoose');
 
 const PatientSchema = new mongoose.Schema({
-    patientID: {
+    uid: {
         type: Number,
         required: true,
+        unique: true,
     },
     name: {
         type: String,
@@ -38,9 +39,9 @@ const PatientSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    centre: {
-        centreId: Number,
-        require: true,
+    center: {
+        type: Number,
+        required: true,
     },
 });
 

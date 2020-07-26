@@ -24,7 +24,11 @@
         "express": "^4.17.1",
         "express-validator": "^6.6.0",
         "jsonwebtoken": "^8.5.1",
-        "mongoose": "^5.9.25"
+        "mongodb": "^3.5.9",
+        "mongoose": "^5.9.25",
+        "textmagic-client": "^2.0.1484",
+        "textmagic-rest-client": "^1.0.10",
+        "twilio": "^3.48.1"
     },
     "devDependencies": {
         "nodemon": "^2.0.4"
