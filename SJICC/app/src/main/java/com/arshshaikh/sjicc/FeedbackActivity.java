@@ -7,6 +7,7 @@ import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.hsalf.smilerating.BaseRating;
@@ -22,11 +23,11 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
     TextView txt3;
     Button submitButton;
     TextToSpeech t1;
-    Button b1;
+    ImageButton b1;
     TextToSpeech t2;
-    Button b2;
+    ImageButton b2;
     TextToSpeech t3;
-    Button b3;
+    ImageButton b3;
     int r1=3, r2=3, r3=3;
 
     private SmileRating mSmileRating1;
@@ -42,6 +43,9 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
         txt2 = findViewById(R.id.txt2);
         txt3 = findViewById(R.id.txt3);
         submitButton = findViewById(R.id.submitButton);
+        b1 = findViewById(R.id.b1);
+        b2 = findViewById(R.id.b2);
+        b2 = findViewById(R.id.b3);
 
         mSmileRating1 = (SmileRating) findViewById(R.id.ratingView1);
         mSmileRating1.setOnSmileySelectionListener(this);
