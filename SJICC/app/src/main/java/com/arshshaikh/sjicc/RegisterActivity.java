@@ -21,11 +21,12 @@ import androidx.appcompat.app.AppCompatActivity;
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     EditText email;
     EditText pass1;
-    EditText pass2;
+    EditText name;
     Button registerButton;
     TextView alreadyRegistered;
     CheckBox showPassword;
     String useremail = "";
+    Spinner spinner1;
     String userpass = "";
 
     @Override
@@ -34,20 +35,21 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         setContentView(R.layout.activity_register);
         email = findViewById(R.id.email);
         pass1 = findViewById(R.id.pass1);
-        pass2 = findViewById(R.id.pass2);
+        name = findViewById(R.id.name);
         registerButton = findViewById(R.id.registerButton);
         alreadyRegistered = findViewById(R.id.alreadyRegistered);
         showPassword = findViewById(R.id.showPassword);
+        spinner1 = findViewById(R.id.spinner1);
 
         Spinner dropdown = findViewById(R.id.spinner1);
-        String[] items = new String[]{"NGO", "Donor"};
+        String[] items = new String[]{"NGO", "DONOR", "CMS"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
 
         alreadyRegistered.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent RegisterIntent = new Intent(RegisterActivity.this, Chart.class);
+                Intent RegisterIntent = new Intent(RegisterActivity.this, FeedbackActivity.class);
                 startActivity(RegisterIntent);
             }
         });
@@ -57,44 +59,28 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             public void onClick(View v) {
                 String mail = email.getText().toString().trim();
                 String pwd = pass1.getText().toString().trim();
-                String pwd2 = pass2.getText().toString().trim();
+                String namef = name.getText().toString().trim();
+                String role = name.getText().toString().trim();
                 if (mail.isEmpty()) {
                     email.setError("Please enter an Email");
                     email.requestFocus();
                 } else if (pwd.isEmpty()) {
                     pass1.setError("Please enter a password");
                     pass1.requestFocus();
-                } else if (pwd2.isEmpty()) {
-                    pass2.setError("Please enter a password");
-                    pass2.requestFocus();
+                } else if (namef.isEmpty()) {
+                    name.setError("Please enter a Name");
+                    name.requestFocus();
                 } else if (pwd.length() <= 6) {
                     pass1.setError("Password should be greater than 6 characters");
                     pass1.requestFocus();
-                } else if (pwd2.length() <= 6) {
-                    pass2.setError("Password should be greater than 6 characters");
-                    pass2.requestFocus();
-                } else if (!pwd.equals(pwd2)) {
-                    Toast.makeText(RegisterActivity.this, "Passwords do not match!", Toast.LENGTH_SHORT).show();
-                } else if (!(mail.isEmpty()) && !(pwd.isEmpty())) {
+                }else if (!(mail.isEmpty()) && !(pwd.isEmpty())) {
                     Register register = new Register();
                     //useremail = register.getEmail();
                     //userpass = register.getPwd();
-                    Intent goToLogin = new Intent(RegisterActivity.this, MainActivity.class);
+                    Intent goToLogin = new Intent(RegisterActivity.this, FeedbackActivity.class);
                     startActivity(goToLogin);
                 }
 
-                showPassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        if (isChecked) {
-                            pass1.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            pass2.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                        } else {
-                            pass1.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            pass2.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                        }
-                    }
-                });
             }
         });
     }

@@ -6,10 +6,12 @@ import android.os.Handler;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     TextView notRegistered;
     CheckBox showPassword;
     boolean doubleBackToExitPressedOnce = false;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.registerButton);
         notRegistered = findViewById(R.id.alreadyRegistered);
         showPassword = findViewById(R.id.showPassword);
+        spinner = findViewById(R.id.spinner);
+        String[] items = new String[]{"NGO", "Donor"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        spinner.setAdapter(adapter);
 
         notRegistered.setOnClickListener(new View.OnClickListener() {
             @Override
