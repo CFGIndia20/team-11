@@ -63,18 +63,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <ImageButton
             android:id="@+id/e1"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="120dp"
             android:background="@drawable/emoji1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.043"
             app:layout_constraintStart_toStartOf="parent" />
-
 
         <ImageButton
             android:id="@+id/e2"
@@ -162,14 +162,14 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/head"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/e11"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginTop="310dp"
             android:background="@drawable/emoji1"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -262,14 +262,14 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/head"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/e21"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginTop="510dp"
             android:background="@drawable/emoji1"
             app:layout_constraintBottom_toBottomOf="parent"

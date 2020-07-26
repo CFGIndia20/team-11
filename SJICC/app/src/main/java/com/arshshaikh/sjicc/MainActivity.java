@@ -7,6 +7,8 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -17,7 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     EditText email;
     EditText pass1;
     Button loginButton;
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         notRegistered = findViewById(R.id.alreadyRegistered);
         showPassword = findViewById(R.id.showPassword);
         spinner = findViewById(R.id.spinner);
-        String[] items = new String[]{"NGO", "Donor"};
+        String[] items = new String[]{"NGO", "Donor", "Patient's Family"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         spinner.setAdapter(adapter);
 
@@ -126,5 +128,28 @@ public class MainActivity extends AppCompatActivity {
                 doubleBackToExitPressedOnce=false;
             }
         }, 2000);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        switch (i) {
+            case 0:
+                Intent DashboardIntent = new Intent(MainActivity.this, Chart.class);
+                startActivity(DashboardIntent);
+                break;
+            case 1:
+                Intent ChatbotIntent = new Intent(MainActivity.this, ChatbotActivity.class);
+                startActivity(ChatbotIntent);
+                break;
+            case 2:
+                Intent FeedbackIntent = new Intent(MainActivity.this, FeedbackActivity.class);
+                startActivity(FeedbackIntent);
+                break;
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

@@ -4,15 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.hsalf.smilerating.BaseRating;
-import com.hsalf.smilerating.SmileRating;
-
 import java.util.Locale;
 
 public class EmojiActivity extends AppCompatActivity implements View.OnClickListener{
