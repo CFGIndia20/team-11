@@ -19,13 +19,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pass1" />
 
-
-
     <EditText
         android:id="@+id/email"
         android:layout_width="267dp"
         android:layout_height="55dp"
-        android:layout_marginTop="65dp"
         android:background="@drawable/et_style"
         android:hint="Email Address"
         android:padding="10dp"
@@ -35,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        tools:layout_editor_absoluteY="283dp" />
 
     <EditText
         android:id="@+id/pass1"
@@ -92,5 +89,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="251dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="22dp"
+        android:background="#40000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

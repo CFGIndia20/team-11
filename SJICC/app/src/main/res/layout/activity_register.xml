@@ -7,40 +7,26 @@
     android:background="@drawable/gradient_background"
     tools:context=".MainActivity">
 
-    <CheckBox
-        android:id="@+id/showPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:checked="false"
-        android:text="Show Password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass2" />
-
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="267dp"
         android:layout_height="39dp"
+        android:layout_marginTop="35dp"
         android:background="@android:drawable/btn_dropdown"
-        android:text="Enter your role"
         android:padding="10dp"
         android:spinnerMode="dropdown"
+        android:text="Enter your role"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
         android:id="@+id/email"
         android:layout_width="267dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="344dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/et_style"
         android:hint="Email Address"
         android:padding="10dp"
@@ -49,39 +35,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner1"/>
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/et_style"
+        android:hint="Name"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
 
     <EditText
         android:id="@+id/pass1"
         android:layout_width="267dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/et_style"
         android:hint="Password"
+        android:inputType="textPassword"
         android:padding="10dp"
         android:textColor="#000000"
         android:textSize="18sp"
-        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
-
-    <EditText
-        android:id="@+id/pass2"
-        android:layout_width="267dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/et_style"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass1" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -98,7 +83,7 @@
         android:id="@+id/registerButton"
         android:layout_width="252dp"
         android:layout_height="49dp"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/button_border"
         android:padding="8dp"
         android:text="Register"
@@ -107,7 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass2" />
+        app:layout_constraintTop_toBottomOf="@+id/pass1" />
 
     <TextView
         android:id="@+id/alreadyRegistered"

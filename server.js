@@ -13,6 +13,9 @@ app.use(express.json({ extended: false }));
 app.use('/api/user', require('./routes/api/user'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/feedback', require('./routes/api/feedback'));
+app.use('/api/patient', require('./routes/api/patient'));
+app.use('/api/center', require('./routes/api/center'));
+app.use('/api/donorfaq', require('./routes/api/donorfaq'));
 
 const PORT = process.env.PORT || 3000;
 

@@ -30,9 +30,9 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
     ImageButton b3;
     int r1=3, r2=3, r3=3;
 
-    private SmileRating mSmileRating1;
-    private SmileRating mSmileRating2;
-    private SmileRating mSmileRating3;
+    SmileRating mSmileRating1;
+    SmileRating mSmileRating2;
+    SmileRating mSmileRating3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +46,17 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
         b1 = findViewById(R.id.b1);
         b2 = findViewById(R.id.b2);
         b2 = findViewById(R.id.b3);
+        mSmileRating1 = findViewById(R.id.ratingView1);
+        mSmileRating2 = findViewById(R.id.ratingView2);
+        mSmileRating3 = findViewById(R.id.ratingView3);
 
-        mSmileRating1 = (SmileRating) findViewById(R.id.ratingView1);
+
         mSmileRating1.setOnSmileySelectionListener(this);
         mSmileRating1.setOnRatingSelectedListener(this);
 
-        mSmileRating2 = (SmileRating) findViewById(R.id.ratingView2);
         mSmileRating2.setOnSmileySelectionListener(this);
         mSmileRating2.setOnRatingSelectedListener(this);
 
-        mSmileRating3 = (SmileRating) findViewById(R.id.ratingView3);
         mSmileRating3.setOnSmileySelectionListener(this);
         mSmileRating3.setOnRatingSelectedListener(this);
 
@@ -148,6 +149,8 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
                 break;
         }
     }
+
+
 
     @Override
     public void onRatingSelected(int level, boolean reselected) {
