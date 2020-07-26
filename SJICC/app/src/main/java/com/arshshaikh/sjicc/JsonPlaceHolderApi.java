@@ -17,4 +17,7 @@ public interface JsonPlaceHolderApi {
 
     @GET("api/feedback")
     Call<FeedbackGet> getfeedbacks();
+
+    @POST("api/feedback")
+    Call<FeedbackPost> createFeedbackPost(@Body FeedbackPost feedbackPost);
 }
