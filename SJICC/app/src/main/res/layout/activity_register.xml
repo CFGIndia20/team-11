@@ -10,7 +10,7 @@
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="267dp"
-        android:layout_height="39dp"
+        android:layout_height="50dp"
         android:layout_marginTop="35dp"
         android:background="#40000000"
         android:padding="10dp"
@@ -22,6 +22,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
+    <TextView
+        android:id="@+id/txtspinner"
+        android:layout_width="267dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/et_style"
+        android:padding="10dp"
+        android:spinnerMode="dropdown"
+        android:text="Enter your role"
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        />
+
     <EditText
         android:id="@+id/email"
         android:layout_width="267dp"
@@ -29,6 +46,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/et_style"
         android:hint="Email Address"
+        android:textAlignment="center"
         android:padding="10dp"
         android:textColor="#000000"
         android:textSize="18sp"
@@ -44,6 +62,7 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/et_style"
         android:hint="Name"
+        android:textAlignment="center"
         android:padding="10dp"
         android:textColor="#000000"
         android:textSize="18sp"
@@ -59,6 +78,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/et_style"
         android:hint="Password"
+        android:textAlignment="center"
         android:inputType="textPassword"
         android:padding="10dp"
         android:textColor="#000000"
