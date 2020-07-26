@@ -153,5 +153,4 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
     public void onRatingSelected(int level, boolean reselected) {
         Log.i(TAG, "Rated as: " + level + " - " + reselected);
     }
-
 }
