@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -67,8 +68,30 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
                 //GoToDashBaoard
                 else if(!(mail.isEmpty()) && !(pwd.isEmpty())){
-                    Intent goToDashboard = new Intent(MainActivity.this, Chart.class);
-                    startActivity(goToDashboard);
+                    Bundle extras = getIntent().getExtras();
+                    if(extras == null) {
+
+                    } else {
+                        String email = extras.getString("Name");
+                        String password = extras.getString("Password");
+                        String roles = extras.getString("Role");
+                        Log.i("Email",email);
+                        Log.i("password",password);
+                        Log.i("roles",roles);
+                        if(roles.equals("NGO")){
+                            Intent goToDashboard = new Intent(MainActivity.this, Chart.class);
+                            startActivity(goToDashboard);
+                        }
+                        else if(roles.equals("DONOR")){
+                            Intent goToDashboard = new Intent(MainActivity.this, Chart.class);
+                            startActivity(goToDashboard);
+                        }
+                        else{
+                            Intent goToEmoji = new Intent(MainActivity.this, EmojiActivity.class);
+                            startActivity(goToEmoji);
+                        }
+                    }
+
                 }
             }
         });
