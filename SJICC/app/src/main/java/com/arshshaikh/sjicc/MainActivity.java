@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //GoToDashBaoard
                 else if(!(mail.isEmpty()) && !(pwd.isEmpty())){
-                    Intent goToDashboard = new Intent(MainActivity.this, Testing.class);
+                    Intent goToDashboard = new Intent(MainActivity.this, Chart.class);
                     startActivity(goToDashboard);
                 }
             }
