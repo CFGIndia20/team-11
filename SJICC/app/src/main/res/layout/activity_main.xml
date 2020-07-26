@@ -56,11 +56,7 @@
 
         android:layout_width="267dp"
         android:layout_height="55dp"
-<<<<<<< HEAD
-        android:layout_marginTop="20dp"
-=======
         android:layout_marginTop="25dp"
->>>>>>> 945bea3d129534827c46ff21f40b2f46865960ad
         android:background="@drawable/et_style"
         android:padding="10dp"
         android:text="Email address"
@@ -69,12 +65,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-<<<<<<< HEAD
-        app:layout_constraintTop_toBottomOf="@+id/txtspinner"
-         />
-=======
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
->>>>>>> 945bea3d129534827c46ff21f40b2f46865960ad
 
     <EditText
         android:id="@+id/pass1"
