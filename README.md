@@ -24,11 +24,7 @@ This project was built for the non-profit organization - St Jude India ChildCare
 
 ## Specifications
 
-```
-box
-```
-
-Honest feedback from the patient's family is very crucial to the NGO as best quality of service and help to those in need is their mission. One major challenge that the organization currently faces is manipulation of feedback before the NGO receives it. This can be solved by eliminating the middle-men in the process and ensuring an end-to-end communication; albeit not manual, between the organization and patient's family directly. The beneficiary would receive an easy and elegant user interface with minimal number of questions asked through IVR in preferred language, and all they have to do is mark/press the corresponding emoticon. This response would be collected by our platform and accessible only to the NGOs.
+Honest feedback from the patient's family is very crucial to the NGO as best quality of service and help to those in need is their mission. One major challenge that the organization currently faces is manipulation of feedback before the NGO receives it. This can be solved by eliminating the middle-men in the process and ensuring an end-to-end communication; albeit not manual, between the organization and patient's family directly. The beneficiary would receive an easy and elegant user interface with **minimal number of questions asked through IVR in preferred language, and all they have to do is mark/press the corresponding emoticon**. This response would be collected by our platform and accessible only to the NGOs. To ensure that all families fill it, we would not ask too many questions at once.
 
 We decided to have 3 logins for 3 different actors in the process - NGO, Donor, Centre Management System.
 NGO login leads to a dashboard where they can get deep insights based on the feedback received from the patient's families after their stay is over. This can help them improve their quality of service.
@@ -36,12 +32,24 @@ Donors can login and get access to regular reports on the platform instead of em
 Centre Management Staff can login and get information about their center like ratings, no. of units occupied, and handling the trigger for the report updates for the donors.
 
 
-## Our Solution
+## Our Solution 
+
+We have built an MVP that tries to address the issues for the organization.
+
+**Step 1:** The user logs-in/ signs-up according to their role
+
+**Step 2a:** NGO dashboard
+
+**Step 2b:** Donor Dashboard
+
+**Step 2c:** Centre Management Staff Dashboard
+
+**Step 3:** Patient's Family Feedback Form
 
 
+## Future Scope
 
-
-
+The patient's family can be given brownie points for filling the feedback form so they don't avoid it.
 
 
 
