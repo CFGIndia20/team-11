@@ -1,26 +1,28 @@
 # St. JUDE INDIA CHILDCARE CENTRES APP
 
-This project was built for the non-profit organization - St Jude India ChildCare Centres - as a part of the Code For Good Hackathon 2020 organized by JPMorgan and Chase. SJICC provides clean, safe and cost free accomodation to children and their accompanying relatives coming from small villages who are undergoing treatment for chronic diseases in metro cities. of India. Our solution aims at solving the critical challenges faced by the organization such as language barriers with the beneficiaries and providing quick automated responses to the donors' queries. 
+This project was built for the non-profit organization - St Jude India ChildCare Centres - as a part of the Code For Good Hackathon 2020 organized by JPMorgan and Chase. SJICC provides clean, safe and cost free accomodation to children and their accompanying relatives coming from small villages who are undergoing treatment for chronic diseases in metro cities. of India. Our solution aims at solving the critical challenges faced by the organization such as language barriers with the beneficiaries and providing quick automated responses to the donors' queries.
 
 ## Technologies Used
-* Android Java
-* Node.js
-* MongoDB and Mongoose
+
+-   Android Java
+-   Node.js
+-   MongoDB and Mongoose
 
 ## Facts and Assumptions
+
 ### FACTS:
 
-* Donors have smartphones and are educated.
-* Beneficiaries have feature phones.
-* Hassle free transport to and from the hospitals.
+-   Donors have smartphones and are educated.
+-   Beneficiaries have feature phones.
+-   Hassle free transport to and from the hospitals.
 
 ### ASSUMPTIONS:
 
-* Patients come before Donors as actors in the flow.
-* Everyone has internet access.
-* Center management staff is manipulative
-* Families originate from rural areas
-* Generate reports first day of month, if any failures send an email to donors
+-   Patients come before Donors as actors in the flow.
+-   Everyone has internet access.
+-   Center management staff is manipulative
+-   Families originate from rural areas
+-   Generate reports first day of month, if any failures send an email to donors
 
 ## Specifications
 
@@ -31,8 +33,7 @@ NGO login leads to a dashboard where they can get deep insights based on the fee
 Donors can login and get access to regular reports on the platform instead of emails. They can also direct their queries to a chatbot that fetches dynamic data from the database and provides quick automated responses for better user experience for the donors.
 Centre Management Staff can login and get information about their center like ratings, no. of units occupied, and handling the trigger for the report updates for the donors.
 
-
-## Our Solution 
+## Our Solution
 
 We have built an MVP that tries to address the issues for the organization.
 
@@ -46,14 +47,10 @@ We have built an MVP that tries to address the issues for the organization.
 
 **Step 3:** Patient's Family Feedback Form
 
-
 ## Future Scope
 
 The patient's family can be given brownie points for filling the feedback form so they don't avoid it.
 
+## Video Link
 
-
-
-
-
-
+https://www.youtube.com/watch?v=IvOdYUwzKZ0&feature=youtu.be
