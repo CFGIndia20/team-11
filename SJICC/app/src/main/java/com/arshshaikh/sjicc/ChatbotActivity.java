@@ -19,7 +19,7 @@ public class ChatbotActivity extends AppCompatActivity {
 
     BubblePicker bubblePicker;
 
-    String queries[] = {"Q1", "Q2", "Q3"};
+    String queries[] = {"Number of students admitted", "Name of the patient I have sponsored", "Is the patient a returnee?"};
 
     int color1= Color.parseColor("@drawable/gradient_background");
     int color2=R.drawable.bg_gradient;

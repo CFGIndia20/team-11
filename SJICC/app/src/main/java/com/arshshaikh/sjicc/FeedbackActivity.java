@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.hsalf.smilerating.BaseRating;
 import com.hsalf.smilerating.SmileRating;
 
@@ -28,6 +27,7 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
     Button b2;
     TextToSpeech t3;
     Button b3;
+    int r1=3, r2=3, r3=3;
 
     private SmileRating mSmileRating1;
     private SmileRating mSmileRating2;
@@ -111,24 +111,15 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int r1 = mSmileRating1.getRating();
-                int r2 = mSmileRating2.getRating();
-                int r3 = mSmileRating3.getRating();
+                r1 = mSmileRating1.getRating();
+                r2 = mSmileRating2.getRating();
+                r3 = mSmileRating3.getRating();
 
                 Toast toast = Toast. makeText(getApplicationContext(), r1 + " " + r2 + " " + r3, Toast. LENGTH_SHORT);
                 toast.show();
             }
         });
     }
-
-    public void onPause(){
-        if(t1 !=null){
-            t1.stop();
-            t1.shutdown();
-        }
-        super.onPause();
-    }
-
 
     @Override
     public void onSmileySelected(@BaseRating.Smiley int smiley, boolean reselected) {
