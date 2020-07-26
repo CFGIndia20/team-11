@@ -57,10 +57,11 @@ router.post(
             return res.status(400).json({ errors: errors.array() });
         }
 
-        const { answer1, answer2, answer3 } = req.body;
+        const { phoneNo, answer1, answer2, answer3 } = req.body;
 
         try {
             const newFeedback = new Feedback({
+                phoneNo,
                 answer1,
                 answer2,
                 answer3,
