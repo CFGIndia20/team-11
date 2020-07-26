@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     TextView notRegistered;
     CheckBox showPassword;
     boolean doubleBackToExitPressedOnce = false;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.registerButton);
         notRegistered = findViewById(R.id.alreadyRegistered);
         showPassword = findViewById(R.id.showPassword);
+        spinner = findViewById(R.id.spinner);
+        String[] items = new String[]{"NGO", "Donor"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        spinner.setAdapter(adapter);
 
         notRegistered.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,8 +66,30 @@ public class MainActivity extends AppCompatActivity {
                 }
                 //GoToDashBaoard
                 else if(!(mail.isEmpty()) && !(pwd.isEmpty())){
-                    Intent goToDashboard = new Intent(MainActivity.this, Chart.class);
-                    startActivity(goToDashboard);
+                    Bundle extras = getIntent().getExtras();
+                    if(extras == null) {
+
+                    } else {
+                        String email = extras.getString("Name");
+                        String password = extras.getString("Password");
+                        String roles = extras.getString("Role");
+                        Log.i("Email",email);
+                        Log.i("password",password);
+                        Log.i("roles",roles);
+                        if(roles.equals("NGO")){
+                            Intent goToDashboard = new Intent(MainActivity.this, Chart.class);
+                            startActivity(goToDashboard);
+                        }
+                        else if(roles.equals("DONOR")){
+                            Intent goToDashboard = new Intent(MainActivity.this, Chart.class);
+                            startActivity(goToDashboard);
+                        }
+                        else{
+                            Intent goToEmoji = new Intent(MainActivity.this, EmojiActivity.class);
+                            startActivity(goToEmoji);
+                        }
+                    }
+
                 }
             }
         });
