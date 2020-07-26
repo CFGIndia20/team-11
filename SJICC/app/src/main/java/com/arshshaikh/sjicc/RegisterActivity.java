@@ -5,25 +5,29 @@ import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     EditText email;
     EditText pass1;
     EditText pass2;
     Button registerButton;
     TextView alreadyRegistered;
     CheckBox showPassword;
-    String useremail="";
-    String userpass="";
+    String useremail = "";
+    String userpass = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,11 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton = findViewById(R.id.registerButton);
         alreadyRegistered = findViewById(R.id.alreadyRegistered);
         showPassword = findViewById(R.id.showPassword);
+
+        Spinner dropdown = findViewById(R.id.spinner1);
+        String[] items = new String[]{"NGO", "Donor"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
 
         alreadyRegistered.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Register register = new Register();
                     //useremail = register.getEmail();
                     //userpass = register.getPwd();
-                    Intent goToLogin = new Intent(RegisterActivity.this,MainActivity.class);
+                    Intent goToLogin = new Intent(RegisterActivity.this, MainActivity.class);
                     startActivity(goToLogin);
                 }
 
@@ -88,5 +97,27 @@ public class RegisterActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+
+        switch (position) {
+            case 0:
+                Intent DashboardIntent = new Intent(RegisterActivity.this, Chart.class);
+                startActivity(DashboardIntent);
+                break;
+            case 1:
+                Intent ChatbotIntent = new Intent(RegisterActivity.this, ChatbotActivity.class);
+                startActivity(ChatbotIntent);
+                break;
+
+        }
+    }
+
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

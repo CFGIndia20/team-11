@@ -3,14 +3,17 @@ package com.arshshaikh.sjicc;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.hsalf.smilerating.BaseRating;
 import com.hsalf.smilerating.SmileRating;
+
+import java.util.Locale;
 
 public class FeedbackActivity extends AppCompatActivity implements SmileRating.OnSmileySelectionListener, SmileRating.OnRatingSelectedListener {
 
@@ -19,6 +22,13 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
     TextView txt2;
     TextView txt3;
     Button submitButton;
+    TextToSpeech t1;
+    ImageButton b1;
+    TextToSpeech t2;
+    ImageButton b2;
+    TextToSpeech t3;
+    ImageButton b3;
+    int r1=3, r2=3, r3=3;
 
     private SmileRating mSmileRating1;
     private SmileRating mSmileRating2;
@@ -33,6 +43,9 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
         txt2 = findViewById(R.id.txt2);
         txt3 = findViewById(R.id.txt3);
         submitButton = findViewById(R.id.submitButton);
+        b1 = findViewById(R.id.b1);
+        b2 = findViewById(R.id.b2);
+        b2 = findViewById(R.id.b3);
 
         mSmileRating1 = (SmileRating) findViewById(R.id.ratingView1);
         mSmileRating1.setOnSmileySelectionListener(this);
@@ -46,20 +59,71 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
         mSmileRating3.setOnSmileySelectionListener(this);
         mSmileRating3.setOnRatingSelectedListener(this);
 
+        t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    t1.setLanguage(Locale.UK);
+                }
+            }
+        });
+
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String toSpeak = txt1.getText().toString();
+                Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
+                t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+
+        t2=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    t2.setLanguage(Locale.UK);
+                }
+            }
+        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String toSpeak = txt2.getText().toString();
+                Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
+                t2.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+
+        t3=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    t3.setLanguage(Locale.UK);
+                }
+            }
+        });
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String toSpeak = txt3.getText().toString();
+                Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
+                t3.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+            }
+        });
+
         submitButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int r1 = mSmileRating1.getRating();
-                int r2 = mSmileRating2.getRating();
-                int r3 = mSmileRating3.getRating();
+                r1 = mSmileRating1.getRating();
+                r2 = mSmileRating2.getRating();
+                r3 = mSmileRating3.getRating();
 
                 Toast toast = Toast. makeText(getApplicationContext(), r1 + " " + r2 + " " + r3, Toast. LENGTH_SHORT);
                 toast.show();
             }
         });
-
-
     }
-
 
     @Override
     public void onSmileySelected(@BaseRating.Smiley int smiley, boolean reselected) {
