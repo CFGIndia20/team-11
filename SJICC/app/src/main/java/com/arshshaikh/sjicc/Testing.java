@@ -83,7 +83,7 @@ public class Testing extends AppCompatActivity {
     }
 
     //create post method for post api
-    private void createPost(){
+    private void create(){
         Post post = new Post(23,"New Title", "New Text");
         Call<Post> call = jsonPlaceHolderApi.createPost(post);
         call.enqueue(new Callback<Post>() {

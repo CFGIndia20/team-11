@@ -70,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Register register = new Register();
                     //useremail = register.getEmail();
                     //userpass = register.getPwd();
-                    Intent goToLogin = new Intent(RegisterActivity.this,MainActivity.class);
+                    Intent goToLogin = new Intent(RegisterActivity.this,FeedbackActivity.class);
                     startActivity(goToLogin);
                 }
 

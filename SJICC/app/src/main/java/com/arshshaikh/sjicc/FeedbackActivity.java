@@ -15,6 +15,12 @@ import com.hsalf.smilerating.SmileRating;
 
 import java.util.Locale;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class FeedbackActivity extends AppCompatActivity implements SmileRating.OnSmileySelectionListener, SmileRating.OnRatingSelectedListener {
 
     private static final String TAG = "FeedbackActivity";
@@ -28,22 +34,30 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
     Button b2;
     TextToSpeech t3;
     Button b3;
-
+    JsonPlaceHolderApi jsonPlaceHolderApi;
     private SmileRating mSmileRating1;
     private SmileRating mSmileRating2;
     private SmileRating mSmileRating3;
+    int r1,r2,r3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.2.105:3000/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+
         txt1 = findViewById(R.id.txt1);
         txt2 = findViewById(R.id.txt2);
         txt3 = findViewById(R.id.txt3);
         submitButton = findViewById(R.id.submitButton);
-
-        mSmileRating1 = (SmileRating) findViewById(R.id.ratingView1);
+        createFeedbackPost(1,2,3);
+       /* mSmileRating1 = (SmileRating) findViewById(R.id.ratingView1);
         mSmileRating1.setOnSmileySelectionListener(this);
         mSmileRating1.setOnRatingSelectedListener(this);
 
@@ -108,17 +122,20 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
                 t3.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
             }
         });
+        */
 
-        submitButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                int r1 = mSmileRating1.getRating();
-                int r2 = mSmileRating2.getRating();
-                int r3 = mSmileRating3.getRating();
 
-                Toast toast = Toast. makeText(getApplicationContext(), r1 + " " + r2 + " " + r3, Toast. LENGTH_SHORT);
-                toast.show();
-            }
-        });
+        //submitButton.setOnClickListener(new View.OnClickListener() {
+          //  public void onClick(View v) {
+               /* r1 = mSmileRating1.getRating();
+                r2 = mSmileRating2.getRating();
+                r3 = mSmileRating3.getRating();
+                createFeedbackPost(r1,r2,r3); */
+                //createFeedbackPost(1,2,3);
+               // Toast toast = Toast. makeText(getApplicationContext(), r1 + " " + r2 + " " + r3, Toast. LENGTH_SHORT);
+               // toast.show();
+        //    }
+      //  });
     }
 
     public void onPause(){
@@ -157,6 +174,32 @@ public class FeedbackActivity extends AppCompatActivity implements SmileRating.O
     @Override
     public void onRatingSelected(int level, boolean reselected) {
         Log.i(TAG, "Rated as: " + level + " - " + reselected);
+    }
+
+    private void createFeedbackPost(int r1, int r2, int r3){
+        FeedbackPost feedbackPost = new FeedbackPost(1,2,3);
+        Call<FeedbackPost> call = jsonPlaceHolderApi.createFeedbackPost(feedbackPost);
+        call.enqueue(new Callback<FeedbackPost>() {
+            @Override
+            public void onResponse(Call<FeedbackPost> call, Response<FeedbackPost> response) {
+                if(!response.isSuccessful()){
+                   // textViewResult.setText("Code:" + response.code());
+                    return;
+                }
+
+                FeedbackPost postresponse = response.body();
+                String content = "";
+                content += "Code" + response.code() + "\n";
+                content += "Answer1" + postresponse.getAnswer1() + "\n";
+                content += "Answer2" + postresponse.getAnswer1() + "\n";
+                content += "Answer3" + postresponse.getAnswer1() + "\n";
+                Log.i("Content",content);
+            }
+            @Override
+            public void onFailure(Call<FeedbackPost> call, Throwable t) {
+
+            }
+        });
     }
 
 }
