@@ -9,13 +9,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChatbotActivity"></activity>
-        <activity android:name=".ChatBot" />
         <activity android:name=".Chart" />
         <activity android:name=".Testing" />
         <activity android:name=".DashboardActivity" />
